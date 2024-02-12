@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade Calculator</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Learning Activity 4</h1>
+    <h2>Know your academic grades!</h2>
+
+    <form id="gradeForm">
+      <label for="studentNumber">Enter student number:</label>
+      <input type="text" id="studentNumber" placeholder="Student Number">
+
+      <label for="studentName">Enter student name:</label>
+      <input type="text" id="studentName" placeholder="Student Name">
+
+      <label for="quiz">Quiz:</label>
+      <input type="number" id="quiz" placeholder="Quiz">
+
+      <label for="recitation">Recitation:</label>
+      <input type="number" id="recitation" placeholder="Recitation">
+
+      <label for="longTest">Long test:</label>
+      <input type="number" id="longTest" placeholder="Long Test">
+
+      <label for="project">Project:</label>
+      <input type="number" id="project" placeholder="Project">
+
+      <label for="attendance">Attendance:</label>
+      <input type="number" id="attendance" placeholder="Attendance">
+
+      <label for="exam">Exam:</label>
+      <input type="number" id="exam" placeholder="Exam">
+
+      <button type="button" onclick="calculateGrade()">Display 1st Semester Grade</button>
+    </form>
+  </div>
+
+  <script>
+    function calculateGrade() {
+      var quiz = parseFloat(document.getElementById('quiz').value) || 0;
+      var recitation = parseFloat(document.getElementById('recitation').value) || 0;
+      var longTest = parseFloat(document.getElementById('longTest').value) || 0;
+      var project = parseFloat(document.getElementById('project').value) || 0;
+      var attendance = parseFloat(document.getElementById('attendance').value) || 0;
+      var exam = parseFloat(document.getElementById('exam').value) || 0;
+
+      var totalGrade = (quiz * 0.1) + (recitation * 0.15) + (longTest * 0.15) + (project * 0.35) + (attendance * 0.05) + exam;
+
+      alert('Total Grade: ' + totalGrade);
+    }
+  </script>
+</body>
+</html>
